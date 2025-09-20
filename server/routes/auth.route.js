@@ -8,25 +8,25 @@ import { checkTokenMiddleware } from "../middlewares/checkToken.middleware.js";
 import { refreshAccessTokenMiddleware } from "../middlewares/refreshToken.middleware.js";
 import rateLimit from 'express-rate-limit'
 import { validateUserForgotPass, verifyForgotPassEmail } from "../middlewares/forgotPass.middleware.js";
-const limitForEmail = rateLimit({
-    windowMs: 30 * 60 * 1000,
-    max: 5,
-    message: 'Too many requests from this IP, please try again after 30 minutes.',
-    headers: true,
-})
+// const limitForEmail = rateLimit({
+//     windowMs: 30 * 60 * 1000,
+//     max: 5,
+//     message: 'Too many requests from this IP, please try again after 30 minutes.',
+//     headers: true,
+// })
 
-const limitForForgotPass = rateLimit({
-    windowMs: 60 * 60 * 1000,
-    max: 5,
-    message: 'Too many requests from this IP, please try again after 1 hour.',
-    headers: true,
-})
+// const limitForForgotPass = rateLimit({
+//     windowMs: 60 * 60 * 1000,
+//     max: 5,
+//     message: 'Too many requests from this IP, please try again after 1 hour.',
+//     headers: true,
+// })
 
 const auth = Router();
 
 auth.post('/signup', validateSignupFields, verifyUserSignup, signup);
 
-auth.post('/sendEmail', limitForEmail, sendEmail)
+auth.post('/sendEmail', sendEmail)
 
 auth.post('/verifyEmail', verifyEmailMiddleware, verifyEmail)
 

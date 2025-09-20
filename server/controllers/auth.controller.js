@@ -39,11 +39,7 @@ export const sendEmail = async (req, res) => {
         var apiKey = defaultClient.authentications['api-key'];
         apiKey.apiKey = process.env.BREVO_API_KEY;
 
-        console.log(process.env.BREVO_API_KEY)
-        console.log("hello")
-
         var apiInstance = new SibApiV3Sdk.TransactionalEmailsApi();
-
 
         const { email } = req.body;
         const user = await User.findOne({ email });
@@ -63,10 +59,15 @@ export const sendEmail = async (req, res) => {
         sendSmtpEmail.to = [{ email: user.email, name: user.username }];
         sendSmtpEmail.templateId = 1;
         sendSmtpEmail.params = { otp, header };
-
+        sendSmtpEmail.sender = {
+            email: "asishathota1@gmail.com",
+            name: "AuthSys"
+        };
 
         const brevoResponse = await apiInstance.sendTransacEmail(sendSmtpEmail);
+
         console.log('API called successfully. Returned data: ', brevoResponse);
+
         res.json({
             msg: "OTP sent successfully"
         })
@@ -222,9 +223,6 @@ export const forgotPassSendEmail = async (req, res) => {
         var apiKey = defaultClient.authentications['api-key'];
         apiKey.apiKey = process.env.BREVO_API_KEY;
 
-        console.log(process.env.BREVO_API_KEY)
-        console.log("hello")
-
         var apiInstance = new SibApiV3Sdk.TransactionalEmailsApi();
 
 
@@ -244,10 +242,16 @@ export const forgotPassSendEmail = async (req, res) => {
         sendSmtpEmail.to = [{ email: user.email, name: user.username }];
         sendSmtpEmail.templateId = 1;
         sendSmtpEmail.params = { otp, header };
+        sendSmtpEmail.sender = {
+            email: "asishathota1@gmail.com",
+            name: "AuthSys"
+        };
 
 
         const brevoResponse = await apiInstance.sendTransacEmail(sendSmtpEmail);
+
         console.log('API called successfully. Returned data: ', brevoResponse);
+
         res.json({
             msg: "OTP sent successfully",
             forgotPassToken: token
