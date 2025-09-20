@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { signup, login, logout, sendEmail, verifyEmail, delAccount, checkToken, refreshAccessToken, forgotPassSendEmail } from "../controllers/auth.controller.js";
+import { signup, login, logout, sendEmail, verifyEmail, delAccount, checkToken, refreshAccessToken, forgotPassSendEmail, resetPass } from "../controllers/auth.controller.js";
 import { validateSignupFields, verifyUserSignup } from "../middlewares/signup.middleware.js";
 import { validateSigninFields, verifyUserSignin } from "../middlewares/signin.middleware.js";
 import { verifyEmailMiddleware } from "../middlewares/virifyEmail.middleware.js";
@@ -42,7 +42,7 @@ auth.post('/forgotPass/sendEmail', validateUserForgotPass, forgotPassSendEmail)
 
 auth.post('/forgotPass/verifyEmail', verifyForgotPassEmail)
 
-auth.post('/forgotPass/resetPass',)
+auth.post('/forgotPass/resetPass', resetPass)
 
 
 auth.post('/test', checkTokenMiddleware, checkToken)

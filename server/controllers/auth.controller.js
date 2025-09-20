@@ -229,7 +229,7 @@ export const forgotPassSendEmail = async (req, res) => {
 
 
         const user = res.user;
-        const token = jwt.sign({ email }, process.env.JWT_PASS, { maxAge: '15m' })
+        const token = jwt.sign({ email }, process.env.JWT_PASS, { maxAge: '30m' })
 
         const otp = generateOTP(6, { digits: true, lowerCaseAlphabets: false, upperCaseAlphabets: false, specialChars: false })
         const header = "You recently requested a one-time password to reset your account password. Please use the following code:"
@@ -276,7 +276,7 @@ export const resetPass = async (req, res) => {
         const salt = await bcryptjs.genSalt(10)
         const hashPass = await bcryptjs.hash(newPass, salt)
 
-        user.password = hashpass;
+        user.password = hashPass;
         user.resetPass = false;
         await user.save()
 
