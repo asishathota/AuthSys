@@ -3,9 +3,9 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
-  --bg-dark: hsl(221 100% 94%);
-  --bg: hsl(221 100% 99%);
-  --bg-light: hsl(221 100% 100%);
+  --bg-dark: hsl(216, 100%, 91%);
+  --bg: hsl(204, 100%, 94%);
+  --bg-light: hsl(180, 100%, 96%);
 
   --text: hsl(246 100% 11%);
   --text-muted: hsl(224 54% 35%);
