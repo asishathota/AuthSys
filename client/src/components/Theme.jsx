@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Sun, Moon } from "lucide-react";
+import { FiMoon, FiSun } from "react-icons/fi";
 
 const Theme = () => {
   const [theme, setTheme] = useState("light");
@@ -28,12 +28,12 @@ const Theme = () => {
   return (
     <button
       onClick={toggleTheme}
-      className="p-2 hover:bg-[var(--bg-dark)] bg-[var(--bg-dark-light)]"
+      className="p-2 hover:bg-[var(--bg-dark)] rounded-lg bg-[var(--bg-dark-light)]"
     >
       {theme === "dark" ? (
-        <Sun className="text-[var(--text)] size-5 md:size-6" />
+        <FiSun className="text-[var(--text)] size-4 md:size-5" />
       ) : (
-        <Moon className="text-[var(--text)] size-5 md:size-6" />
+        <FiMoon className="text-[var(--text)] size-4 md:size-5" />
       )}
     </button>
   );

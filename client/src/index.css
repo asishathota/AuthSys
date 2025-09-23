@@ -3,19 +3,19 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
-  --bg-dark: hsl(220 100% 94%);
-  --bg: hsl(220 100% 99%);
-  --bg-light: hsl(220 100% 100%);
+  --bg-dark: hsl(221 100% 94%);
+  --bg: hsl(221 100% 99%);
+  --bg-light: hsl(221 100% 100%);
 
-  --text: hsl(245 100% 11%);
-  --text-muted: hsl(222 57% 34%);
-  --highlight: hsl(220 100% 100%);
+  --text: hsl(246 100% 11%);
+  --text-muted: hsl(224 54% 35%);
+  --highlight: hsl(222 100% 100%);
 
-  --border: hsl(221 50% 57%);
-  --border-muted: hsl(221 72% 69%);
+  --border: hsl(223 49% 58%);
+  --border-muted: hsl(222 72% 70%);
 
-  --primary: hsl(222 57% 34%);
-  --secondary: hsl(43 100% 13%);
+  --primary: hsl(224 54% 35%);
+  --secondary: hsl(44 100% 13%);
 
   --danger: hsl(7 47% 42%);
   --warning: hsl(53 100% 17%);
@@ -24,19 +24,19 @@
 }
 
 :root.dark {
-  --bg-dark: hsl(237 100% 5%);
-  --bg: hsl(228 92% 7%);
-  --bg-light: hsl(222 73% 11%);
+  --bg-dark: hsl(239 98% 5%);
+  --bg: hsl(230 88% 7%);
+  --bg-light: hsl(224 69% 11%);
 
-  --text: hsl(220 100% 100%);
-  --text-muted: hsl(220 78% 76%);
-  --highlight: hsl(221 45% 45%);
+  --text: hsl(222 100% 100%);
+  --text-muted: hsl(222 77% 76%);
+  --highlight: hsl(223 43% 46%);
 
-  --border: hsl(222 57% 34%);
-  --border-muted: hsl(223 79% 23%);
+  --border: hsl(224 54% 35%);
+  --border-muted: hsl(226 72% 24%);
 
-  --primary: hsl(220 98% 77%);
-  --secondary: hsl(41 62% 57%);
+  --primary: hsl(222 98% 77%);
+  --secondary: hsl(42 60% 57%);
 
   --danger: hsl(8 63% 66%);
   --warning: hsl(52 49% 46%);
